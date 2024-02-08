@@ -37,9 +37,45 @@ class HomeNavBar extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(bottom: 4.0),
-                        child: FaIcon(
-                          modelItem.theIcon,
-                          color: selected ? buttonColor : Colors.grey,
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          child: Stack(
+                            children: [
+                              Center(
+                                child: FaIcon(
+                                  modelItem.theIcon,
+                                  color: selected ? buttonColor : Colors.grey,
+                                ),
+                              ),
+                              if (index == 2)
+                                Align(
+                                  alignment: Alignment.topRight,
+                                  child: Container(
+                                    width: 25,
+                                    height: 25,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      color:
+                                          selected ? buttonColor : Colors.grey,
+                                      border: Border.all(
+                                        color: Colors.white,
+                                        width: 3,
+                                      ),
+                                    ),
+                                    child: Center(
+                                        child: Text(
+                                      "3",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )),
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
                       Container(
